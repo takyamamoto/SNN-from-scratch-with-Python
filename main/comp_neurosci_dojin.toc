@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}初めに}{2}{section.1}
+\contentsline {section}{\numberline {2}神経生理早わかり}{2}{section.2}
+\contentsline {section}{\numberline {3}発火率モデル}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Feed forward model}{2}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}RNN}{2}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}RNN}{2}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Daleの原理を守ったRNN}{2}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}LSTMを理解する}{3}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}GRUを理解する}{3}{subsubsection.3.2.4}
+\contentsline {section}{\numberline {4}Spiking model}{3}{section.4}
+\contentsline {subsubsection}{\numberline {4.0.1}rate modelをSpiking modelに変換する}{3}{subsubsection.4.0.1}
+\contentsline {subsubsection}{\numberline {4.0.2}rate modelのフレームワークでSpiking modelを実装する}{3}{subsubsection.4.0.2}
+\contentsline {section}{\numberline {5}ANNの解析方法}{3}{section.5}
+\contentsline {subsubsection}{\numberline {5.0.1}受容野解析}{3}{subsubsection.5.0.1}
+\contentsline {subsubsection}{\numberline {5.0.2}不活性化解析(Ablation analysis)}{3}{subsubsection.5.0.2}
+\contentsline {subsubsection}{\numberline {5.0.3}CCA}{3}{subsubsection.5.0.3}
+\contentsline {subsubsection}{\numberline {5.0.4}固定点解析}{3}{subsubsection.5.0.4}
+\contentsline {section}{\numberline {6}脳内の神経表現の再現}{3}{section.6}
+\contentsline {subsection}{\numberline {6.1}視覚経路}{3}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}グリッド細胞}{3}{subsection.6.2}
+\contentsline {section}{\numberline {7}ニューラルネットワークの学習と発達}{3}{section.7}
+\contentsline {section}{\numberline {8}あとがき}{3}{section.8}

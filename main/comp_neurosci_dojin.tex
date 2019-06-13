@@ -1,0 +1,106 @@
+\documentclass[a4j]{jarticle}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphics}
+\usepackage{amsmath,amssymb}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage{ascmac}
+\usepackage{graphicx,color}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{framed}
+\usepackage{bm}
+\usepackage{eclbkbox}
+\usepackage{here}
+\usepackage{color}
+\usepackage{mhchem}
+\usepackage[setpagesize=false,dvipdfmx,%
+bookmarks=true,bookmarksnumbered=true,%
+pdftitle={タイトル},%
+pdfauthor={作成者},%
+pdfsubject={サブタイトル},%
+pdfkeywords={キーワード},
+linkcolor=blue,anchorcolor=blue,urlcolor=blue,
+]{hyperref}
+\usepackage{pxjahyper}
+\setlength{\topmargin}{-0.3in}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textheight}{46\baselineskip}
+\setlength{\textwidth}{47zw}
+\allowdisplaybreaks %数式が複数ページに渡ることを許可する
+
+\newcommand{\Part}[1]{\part*{#1}
+\addcontentsline{toc}{part}{#1}}
+\newcommand{\Section}[1]{\section*{#1}
+\addcontentsline{toc}{section}{#1}}
+\newcommand{\Subsection}[1]{\subsection*{#1}
+\addcontentsline{toc}{subsection}{#1}}
+
+\newenvironment{lightgrayleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 0.5zw} \hspace{5pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+
+\title{脳のモデルとしてのニューラルネットワーク}
+\author{\vspace{-5mm}}
+\date{\vspace{-20mm}}
+\begin{document}
+\maketitle
+% 目次の出力
+\tableofcontents
+\clearpage
+% ここから本文
+\section{初めに}
+昨今の機械学習で大流行りしたニューラルネットワークは脳を模すと言われています。これはANNが元々神経回路のモデルから始まったからです。しかしニューラルネットワークは脳と全く似ていないとよく批判され、ニューラルネットワークの構成要素を''人工ニューロン''と呼ばず、'''ユニット'と呼ぼうという声も随分前からあります。しかし、昨今のNature Neuroscience（神経科学のトップジャーナル）では毎月のようにANNを用いた研究成果が発表されています。要はANNを脳のモデルとして用いることが認められているのです（※ただし、最低限の生物学的妥当性(biological plausible)がなくてはダメ）。\par
+このようなことから少し前の通説と最新の研究の間に意見の相違があることは明らかです。それでは最新の研究はどのようなことを取り扱っているのでしょうか。ANNはどのように捉えれば良いのでしょうか。\par
+前置きとして宣言しますが、この本の内容は完全に信用しない方がいいです。そもそも自分のミスもありますし、好き勝手言っている節もあるためです。ただし、合っているかは別として面白いと思った話は掲載しています。\par
+というわけで位置づけとしては、Abott本に付け加える形で最近の論文の内容をまとめたものです。
+\section{神経生理早わかり}
+初めに神経生理学について説明しておきます。
+発火率コーディング(rate coding)とtemporal codingがある（位相前進とか）
+\section{発火率モデル}
+\subsection{Feed forward model}
+いよいよNNを見ていきます。私の話で恐縮ですが、NNを正しく脳のモデルと理解するまでかなり時間がかかりました。混乱した原因は「加算」と「閾値を超えると発火」という点です。結論から先に言うと、今言われている典型的なニューラルネットワークは「発火率モデル」というものです。\par
+まず、初めにマカロック-ピッツ(McCulloch-Pitts)から見てみます。
+ANNは脳のようであると言われているが実際にはそうではない。
+発火率モデルとして捉えられる。ので、ミクロに見ればスパイクを出してはいないが、少しマクロにニューロンの活動のダイナミクスを見ると一致している。
+\subsection{RNN}
+\subsubsection{RNN}
+微分方程式で書くと、
+$$
+\tau \frac{d\boldsymbol{r}}{dt}=-\boldsymbol{r}+f(W^{\text{rec}}\boldsymbol{r}+W^{\text{in}}\boldsymbol{u}+\boldsymbol{b}^{\text{rec}}+\boldsymbol{\xi})
+$$
+これを first-order Euler approximationを用いて離散化(time step $\Delta t$)すると、
+$$
+\boldsymbol{r}_t=(1-\alpha) \boldsymbol{r}_{t-1}+\alpha f(W^{\text{rec}}\boldsymbol{r}_{t-1}+W^{\text{in}}u_{t}+\boldsymbol{b}^{\text{rec}}+\boldsymbol{\xi}_t)
+$$
+
+
+\subsubsection{Daleの原理を守ったRNN}
+Daleの法則.この法則は現在は修正されていますが、それでも
+\subsubsection{LSTMを理解する}
+subLSTM
+\subsubsection{GRUを理解する}
+LSTMは何とか理解すると、今度はGRUという機構が出現する。これの機構が全く理解できなかったが、最近になって理解した。時定数の調整。
+
+\section{Spiking model}
+\subsubsection{rate modelをSpiking modelに変換する}
+\subsubsection{rate modelのフレームワークでSpiking modelを実装する}
+
+\section{ANNの解析方法}
+\subsubsection{受容野解析}
+STA, STCなど
+\subsubsection{不活性化解析(Ablation analysis)}
+\subsubsection{CCA}
+\subsubsection{固定点解析}
+\section{脳内の神経表現の再現}
+\subsection{視覚経路}
+\subsection{グリッド細胞}
+内側嗅内皮質等で発見されている。自己の位置を推定するために用いられていると示されている。また、視覚内においても、世界をGridに分割しているのではという研究もある(Visual grid cell)。
+\section{ニューラルネットワークの学習と発達}
+
+\section{あとがき}
+ヒトの脳の解剖をしたときには理解不能だった。
+\end{document}
