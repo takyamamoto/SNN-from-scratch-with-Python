@@ -1,4 +1,7 @@
-\BOOKMARK [0][-]{chapter.1}{ニューラルネットワークのモデルを神経生理学的に理解する}{}% 1
+\BOOKMARK [0][-]{chapter.1}{ニューラルネットワークのアーキテクチャの神経生理学的解釈}{}% 1
 \BOOKMARK [1][-]{section.1.1}{畳み込みニューラルネットワーク \(CNN\)}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{LSTM}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Normalization}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{GRU}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Dropout}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Normalization}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter*.1}{参考文献}{}% 7

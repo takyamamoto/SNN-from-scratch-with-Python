@@ -5,7 +5,7 @@
 \usepackage{here}
 \usepackage{framed}
 \usepackage{tcolorbox}
-\usepackage{quotchap}
+%\usepackage{quotchap}
 \usepackage{pdfpages}
 \usepackage[hidelinks]{hyperref}
 \usepackage{pxjahyper}
@@ -42,18 +42,27 @@
 
 \begin{document}
 
-\chapter{ニューラルネットワークのモデルを\\神経生理学的に理解する}
+\chapter[ニューラルネットワークのアーキテクチャの神経生理学的解釈]{ニューラルネットワークの\\アーキテクチャの神経生理学的解釈}
 \section{畳み込みニューラルネットワーク (CNN)}
 CNNは視覚のモデルとして優れていることは分かるのだが、スライディングウィンドウなどが入るせいでいまいち理解できない。
 CNNはスライディングウィンドウを用いて視覚全体にニューロンをコピペしたもの。同種のニューロンは同じものとして重み共有により学習。
-
+\subsection{max-pooling}
+Winner-take allの仕組みはlateral inhibitionとして捉えることができる。
 \section{LSTM}
 セルアセンブリによるメモリの維持。他にはCA3の海馬の構造も似ている。
 
+\section{GRU}
+
+\section{Dropout}
+Dropoutは負のノイズにより発火が抑制されること。Hintonのセミナー。\\
+\url{https://www.youtube.com/watch?v=VIRCybGgHts}\\
+\url{https://www.quora.com/Is-there-a-biological-basis-for-dropout-in-neural-networks}
+正則化が如何に実現されているかは議論の余地があるが、ヒトのニューロンの特性が認知機能を支えているかもしれない。
+
 \section{Normalization}
+Normalization自体は昔からV1のモデルとして存在していた。
 我輩は猫である\footnote{こんな感じで脚注を書く}。
 
-どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 
 \begin{tcolorbox}[breakable]
 \begin{verbatim}
@@ -93,5 +102,9 @@ $ echo "Hello, World!"
 
   tcolorboxはtitleを指定するといい感じにタイトル付きの枠で囲ってくれる。
 \end{tcolorbox}
+\begin{thebibliography}{99}
+\subsection*{1章}
+\bibitem{Woźniak} L. Beaulieu-Laroche, et al. ``Enhanced Dendritic Compartmentalization in Human Cortical Neurons.''. (2018). \url{https://www.ncbi.nlm.nih.gov/pubmed/30340039}
+\end{thebibliography}
 
 \end{document}

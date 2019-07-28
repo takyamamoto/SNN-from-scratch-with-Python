@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.7.30)  13 JUN 2019 15:37
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.7.30)  18 JUN 2019 00:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -356,10 +356,6 @@ Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
 \tcb@out=\write4
 \tcb@record@out=\write5
 )
-(c:/w32tex/share/texmf-dist/tex/latex/quotchap/quotchap.sty
-Package: quotchap 2012/10/20 v1.1 Decorative Chapter Headings with Quotes
-\@quotebox=\box59
-)
 (c:/w32tex/share/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2017/07/14 v0.5j Insert pages of external PDF documents (AM)
 
@@ -400,11 +396,11 @@ Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 (c:/w32tex/share/texmf-dist/tex/latex/pdfpages/ppdvipdfmx.def
 File: ppdvipdfmx.def 2017/07/14 v0.5j Pdfpages driver for dvipdfmx (AM)
 )
-\AM@pagebox=\box60
+\AM@pagebox=\box59
 \AM@global@opts=\toks31
 \AM@toc@title=\toks32
 \c@AM@survey=\count111
-\AM@templatesizebox=\box61
+\AM@templatesizebox=\box60
 )
 (c:/w32tex/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
@@ -510,7 +506,7 @@ Package hyperref Message: Driver: hdvipdfm.
 
 (c:/w32tex/share/texmf-dist/tex/latex/hyperref/hdvipdfm.def
 File: hdvipdfm.def 2017/03/14 v6.85a Hyperref driver for dvipdfm
-\pdfm@box=\box62
+\pdfm@box=\box61
 \c@Hy@AnnotLevel=\count120
 \HyField@AnnotCount=\count121
 \Fld@listcount=\count122
@@ -528,7 +524,7 @@ Package: pxjahyper 2012/05/27 v0.2
 )
 (c:/w32tex/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box63
+\ttl@box=\box62
 \beforetitleunit=\skip49
 \aftertitleunit=\skip50
 \ttl@plus=\dimen175
@@ -572,10 +568,10 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@lastysaved=\dimen186
 \tikzleveldistance=\dimen187
 \tikzsiblingdistance=\dimen188
-\tikz@figbox=\box64
-\tikz@figbox@bg=\box65
-\tikz@tempbox=\box66
-\tikz@tempbox@bg=\box67
+\tikz@figbox=\box63
+\tikz@figbox@bg=\box64
+\tikz@tempbox=\box65
+\tikz@tempbox@bg=\box66
 \tikztreelevel=\count125
 \tikznumberofchildren=\count126
 \tikznumberofcurrentchild=\count127
@@ -623,8 +619,8 @@ LaTeX Info: Redefining \overline on input line 375.
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box68
-\strutbox@=\box69
+\Mathstrutbox@=\box67
+\strutbox@=\box68
 \big@size=\dimen191
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
@@ -663,9 +659,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (c:/w32tex/share/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
 Library (tcolorbox): 'tcbbreakable.code.tex' version '4.10'
-\tcb@testbox=\box70
-\tcb@totalupperbox=\box71
-\tcb@totallowerbox=\box72
+\tcb@testbox=\box69
+\tcb@totalupperbox=\box70
+\tcb@totallowerbox=\box71
 ) (c:/w32tex/share/texmf-dist/tex/latex/titlesec/block.tss
 File: block.tss 2016/03/15
 ) (./chap1.aux)
@@ -691,7 +687,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box73
+\AtBeginShipoutBox=\box72
 
 (c:/w32tex/share/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
@@ -719,26 +715,18 @@ LaTeX Info: Redefining \nameref on input line 46.
 
 
 第1章
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 48.
-
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
 (Font)              scaled to size 19.9311pt on input line 48.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 19.9311pt on input line 48.
-LaTeX Font Info:    Try loading font information for T1+pbk on input line 48.
-(c:/w32tex/share/texmf-dist/tex/latex/psnfss/t1pbk.fd
-File: t1pbk.fd 2001/06/04 font definitions for T1/pbk.
-)
-LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <20.74> not available
-(Font)              Font shape `T1/pbk/db/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 96.09985pt on input line 48.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 96.09985pt on input line 48.
-LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <100> not available
-(Font)              Font shape `T1/pbk/db/n' tried instead on input line 48.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 48.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 48.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 48.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 48.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 49.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
@@ -755,65 +743,82 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 51.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 51.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 59.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 59.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 59.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 59.
- [1
-
-
-]
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 62.
+(Font)              scaled to size 6.72699pt on input line 53.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 62.
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
-
+(Font)              scaled to size 4.805pt on input line 53.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 (c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 (c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 56.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 56.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 72.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 72.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 63.
+(Font)              scaled to size 9.60999pt on input line 72.
+ [1
+
+
+] [2]
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 63.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 63.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 63.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 75.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 75.
- [2]
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 104.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 104.
+(Font)              scaled to size 6.72699pt on input line 102.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 102.
  [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 118.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 118.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 144.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 144.
+ [4]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 172.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 172.
+
+[5]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 186.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 186.
+Missing character: There is no ^^c5 in font cmr10!
+Missing character: There is no ^^ba in font cmr10!
+ [6
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 192.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 192.
  (./chap1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 118.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
-Package rerunfilecheck Info: File `chap1.out' has not changed.
-(rerunfilecheck)             Checksum: 87133B99934B0BB608E9F54EBF619DB9;280.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 192.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 192.
+
+
+Package rerunfilecheck Warning: File `chap1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `chap1.out':
+(rerunfilecheck)             Before: CB45E1E327BEC43E11318F57BF88A980;490
+(rerunfilecheck)             After:  B34B625E42AC30CC2305283F5F5C9322;493.
  ) 
 Here is how much of TeX's memory you used:
- 19278 strings out of 493648
- 366611 string characters out of 6150704
- 434788 words of memory out of 5000000
- 22512 multiletter control sequences out of 15000+600000
- 22336 words of font info for 95 fonts, out of 8000000 for 9000
+ 19197 strings out of 493648
+ 365481 string characters out of 6150704
+ 436408 words of memory out of 5000000
+ 22439 multiletter control sequences out of 15000+600000
+ 22079 words of font info for 100 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 54i,10n,73p,831b,505s stack positions out of 5000i,500n,10000p,500000b,80000s
+ 54i,12n,73p,831b,524s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on chap1.dvi (3 pages, 12536 bytes).
+Output written on chap1.dvi (6 pages, 27780 bytes).

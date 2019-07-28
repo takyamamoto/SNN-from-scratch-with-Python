@@ -5,7 +5,7 @@
 \usepackage{here}
 \usepackage{framed}
 \usepackage{tcolorbox}
-\usepackage{quotchap}
+%\usepackage{quotchap}
 \usepackage{pdfpages}
 \usepackage[hidelinks]{hyperref}
 \usepackage{pxjahyper}
@@ -45,19 +45,58 @@
 
 \begin{document}
 
-\chapter{脳のモデルとしての\\ニューラルネットワーク}
-\section{Spiking model}
+\chapter[脳のモデルとしてのニューラルネットワーク]{脳のモデルとしての\\ニューラルネットワーク}
+\section{Spikingモデル}
 ホジキンハクスレーの式
-\subsection{LIF}
+\subsection{LIF model}
+
+$$
+\tau \frac{dV_{m}(t)}{dt}=-V_{m}(t)+R I(t)
+$$
+ただし、$\tau=RC$です。静止膜電位を考慮する場合は、定数項$V_{\text{rest}}$を加えるとよいです。これをオイラー近似で離散化し、
+$$
+V_{m, t}=\frac{\Delta t}{C} I_{t}+\left(1-\frac{\Delta t}{\tau}\right)V_{m, t-1}
+$$
+となります。$V_m$が一定の閾値$V_{\text{th}}$を超えるとニューロンは発火し、膜電位はリセットされて静止膜電位に戻ります。この実装は$V_{m,t} > V_{\text{th}}$なら出力$y_{t}=1$のようにif文を用いたものが多くみられますが、ここではif文を用いない実装を紹介します。\par
+この手法は$y_{t-1}=1$なら膜電位がリセットされるように$\left(1-y_{t-1}\right)$を膜電位に乗じます。
+\begin{align*}
+V_{m, t}&=\frac{\Delta t}{C} I_{t}+\left(1-\frac{\Delta t}{\tau}\right)V_{m, t-1}\cdot \left(1-y_{t-1}\right)\\
+y_{t}&=f\left(V_{m, t}-V_{\text{th}}\right) 
+\end{align*}
+ただし、$f(\cdot)$はステップ関数で、
+$$
+f(x) = \begin{cases}
+    1 & (x>0) \\
+    0 & (x\leq0)
+  \end{cases}
+$$
+となります。この実装は元々Spiking Neural Unit (SNU)というアーキテクチャで考案されたものです。SNUは普通のニューラルネットワークのフレームワークでSNNを取り扱うためのユニットで、これを用いると簡単に誤差逆伝搬法でSNNを学習させることができます。厄介なのはステップ関数を微分するとデルタ関数となる点ですが、疑似勾配としてtanhの微分を用いることで解決しています。\par
+さて、それではSNNを実装してみましょう。
+\begin{tcolorbox}[breakable, title=SNN.py]
+\begin{verbatim}
+1  /* ここにはソースコードを書く */
+2  #include<stdio.h>
+3
+4  int main(void)
+5  {
+6    printf("Hello, World!\n");
+7    return 0;
+8  }
+9  /* breakableを付けるとこんな感じで改行にも対応できる */
+\end{verbatim}
+\end{tcolorbox}
+ここで入力としてポアソンスパイクを用いています。つまり入力ニューロンがポアソン過程に従って発火するという場合を考えています。$\lambda$を発火率とした場合、区間$[t, t+dt]$の間にポアソンスパイクが発生する確率は$\lambda dt$ですが、このことを簡単に示しておきます。事象が起こる確率が強度$\lambda$のポアソン分布に従う場合、時刻$t$までに事象が$n$回起こる確率は$P[N(t)=n]=\dfrac{(\lambda t)^{n}}{n !} e^{-\lambda t}$となります。よって、微小時間$dt$において事象が$1$回起こる確率は
+$$P[N(d t)=1]=\dfrac{\lambda dt}{1 !} e^{-\lambda dt}\simeq \lambda dt+o(dt)$$
+となります。ただし、$o(\cdot)$はランダウの記号であり、$e^{-\lambda dt}$についてはマクローリン展開による近似を行っています。また、微小時間$dt$の間はスパイクが2回以上生じないという仮定をおいています。これらのことから、一様分布$U(0,1)$に従う乱数$\xi$を取得し、$\xi<\lambda dt$なら発火$(y=1)$, それ以外では$(y=0)$となるようにすればポアソンスパイクを実装できます。
 
 \section{発火率モデル}
-いよいよNNを見ていきます。私の話で恐縮ですが、NNを正しく脳のモデルと理解するまでかなり時間がかかりました。混乱した原因は「加算」と「閾値を超えると発火」という点です。結論から先に言うと、今言われている典型的なニューラルネットワークは「発火率モデル」というものです。\par
+いよいよNNを見ていきます。今言われている典型的なニューラルネットワークは「発火率モデル」というものです。\par
 まず、初めにマカロック-ピッツ(McCulloch-Pitts)から見てみます。
 ANNは脳のようであると言われているが実際にはそうではない。
 発火率モデルとして捉えられる。ので、ミクロに見ればスパイクを出してはいないが、少しマクロにニューロンの活動のダイナミクスを見ると一致している。
-
+\subsubsection{活性化関数}
+活性化関数はニューロンの発火率におけるI/O関係を表している。要はゲイン。低頻度での発火であれば、ReLUで近似できる。
 \subsection{RNN}
-\subsubsection{RNN}
 微分方程式で書くと、
 $$
 \tau \frac{d \boldsymbol{r}}{dt}=-\boldsymbol{r}+f(W^{\text{rec}}\boldsymbol{r}+W^{\text{in}}\boldsymbol{u}+\boldsymbol{b}^{\text{rec}}+\boldsymbol{\xi})
@@ -67,14 +106,43 @@ $$
 \boldsymbol{r}_t=(1-\alpha) \boldsymbol{r}_{t-1}+\alpha f(W^{\text{rec}}\boldsymbol{r}_{t-1}+W^{\text{in}}u_{t}+\boldsymbol{b}^{\text{rec}}+\boldsymbol{\xi}_t)
 $$
 
-
-\subsubsection{Daleの原理を守ったRNN}
+\begin{tcolorbox}[title=Daleの原理を守ったRNN]
 Daleの法則.この法則は現在は修正されていますが、それでも
+\end{tcolorbox}
+
+
+\section{スパイクモデルと発火率モデル}
+\subsection{LIFから発火率モデルへの変換}
+これは数理的な話。LIFニューロンの発火率が$\text{rate}\sim \left(\tau \ln \frac{RI}{RI-V_{\text{th}}}\right)$と近似できることを示します。つまりI/Oの描画。\par
+$t=t_1$にスパイクが生じたとします。このとき、膜電位はリセットされるので$V_m(t_1)=0$です。$[t_1, t]$における膜電位はLIFの式を積分することで得られます。ただし、一定な入力が持続していることを仮定します。
+$$
+\tau \frac{dV_{m}(t)}{dt}=-V_{m}(t)+R I(t)
+$$
+の式を積分すると、
+\begin{align*}
+\int_{t_1}^{t} \frac{\tau dV_m}{RI-V_m}&=\int_{t_1}^{t} dt\\
+\ln(1-\frac{V_m(t)}{RI})&=-\frac{t-t_1}{\tau} \ \ \ (\because V_m(t_1)=0)\\
+\therefore\ \ V_m(t) &=RI\left[1-\exp\left(-\frac{t-t_1}{\tau}\right)\right] 
+\end{align*}
+となります。$t>t_1$における初めのスパイクが$t=t_2$に生じたとすると、そのときの膜電位は$V_m(t_2)=V_{\text{th}}$です（実際には閾値以上となっている場合もあるますが近似します）。$t=t_2$を上の式に代入して
+\begin{align*}
+V_{\text{th}}&=RI\left[1-\exp\left(-\frac{t_2-t_1}{\tau}\right)\right] \\
+\therefore\ \ T&= t_2-t_1 =  \tau \ln \frac{RI}{RI-V_{\text{th}}}
+\end{align*}
+となります。ここで$T$は2つのスパイクの時間間隔です。$t_1\leq t<t_2$におけるスパイクは$t=t_1$時の1つなので、発火率は$1/T$となります。よって
+$$
+\text{rate}\sim \left(\tau \ln \frac{RI}{RI-V_{\text{th}}}\right)
+$$
+です。不応期$\Delta_{\text{abs}}$を考慮すると、持続的に入力がある場合は単純に$\Delta_{\text{abs}}$だけ発火が遅れるので発火率は$1/(\Delta_{\text{abs}}+T)$となります。
+\subsection{発火率モデルからLIFへの変換}
+SNNは学習が難しいが。
+
+\section{STDP則によるSNNの学習}
+
 
 \section{これはsection}
 我輩は猫である\footnote{こんな感じで脚注を書く}。
 
-どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
 
 \begin{tcolorbox}[breakable]
 \begin{verbatim}
@@ -114,5 +182,11 @@ $ echo "Hello, World!"
 
   tcolorboxはtitleを指定するといい感じにタイトル付きの枠で囲ってくれる。
 \end{tcolorbox}
+
+\begin{thebibliography}{99}
+\subsection*{1章}
+\bibitem{Woźniak} S. Woźniak, et al. ``Deep learning incorporating biologically-inspired neural dynamics''. (2018). \url{https://arxiv.org/abs/1812.07040}
+\bibitem{Gerstner} Gerstner, W. and Kistler, W. M. (2002). Spiking Neuron Models. Single Neurons, Populations, Plasticity. Cambridge University Press. \url{https://icwww.epfl.ch/~gerstner/BUCH.html}
+\end{thebibliography}
 
 \end{document}

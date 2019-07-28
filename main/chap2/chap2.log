@@ -1,21 +1,20 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.7.30)  13 JUN 2019 15:24
+This is e-pTeX, Version 3.14159265-p3.8.1-180901-2.6 (utf8.sjis) (TeX Live 2018/W32TeX) (preloaded format=platex 2018.11.14)  17 JUN 2019 15:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./chap2.tex
+**chap2.tex
 (./chap2.tex
-pLaTeX2e <2017/07/29> (based on LaTeX2e <2017-04-15>)
-Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
+pLaTeX2e <2018-07-28>+1 (based on LaTeX2e <2018-04-01> patch level 5)
 (c:/w32tex/share/texmf-dist/tex/platex/jsclasses/jsbook.cls
-Document Class: jsbook 2017/03/05 okumura, texjporg
+Document Class: jsbook 2018/06/23 jsclasses (okumura, texjporg)
 \jsc@mpt=\dimen118
 \jsc@mmm=\dimen119
 \jsc@smallskipamount=\skip41
-LaTeX Info: Redefining \rmfamily on input line 473.
-LaTeX Info: Redefining \sffamily on input line 476.
-LaTeX Info: Redefining \ttfamily on input line 479.
-LaTeX Info: Redefining \textmc on input line 482.
-LaTeX Info: Redefining \textgt on input line 484.
+LaTeX Info: Redefining \rmfamily on input line 471.
+LaTeX Info: Redefining \sffamily on input line 474.
+LaTeX Info: Redefining \ttfamily on input line 477.
+LaTeX Info: Redefining \textmc on input line 481.
+LaTeX Info: Redefining \textgt on input line 483.
 \symmincho=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
 (Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 545.
@@ -25,18 +24,18 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 736.
 \fullwidth=\dimen120
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 896.
+(Font)              scaled to size 7.68799pt on input line 897.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 896.
-\c@part=\count82
-\c@chapter=\count83
-\c@section=\count84
-\c@subsection=\count85
-\c@subsubsection=\count86
-\c@paragraph=\count87
-\c@subparagraph=\count88
-\c@figure=\count89
-\c@table=\count90
+(Font)              scaled to size 7.68799pt on input line 897.
+\c@part=\count83
+\c@chapter=\count84
+\c@section=\count85
+\c@subsection=\count86
+\c@subsubsection=\count87
+\c@paragraph=\count88
+\c@subparagraph=\count89
+\c@figure=\count90
+\c@table=\count91
 \abovecaptionskip=\skip42
 \belowcaptionskip=\skip43
 \jsc@tocl@width=\dimen121
@@ -48,7 +47,7 @@ LaTeX Info: Redefining \TeX on input line 94.
 LaTeX Info: Redefining \LaTeX on input line 147.
 LaTeX Info: Redefining \LaTeXe on input line 200.
 )
-\heisei=\count91
+\heisei=\count92
 )
 (c:/w32tex/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -88,13 +87,13 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 (c:/w32tex/share/texmf-dist/tex/latex/here/here.sty)
 (c:/w32tex/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count92
+\c@float@type=\count93
 \float@exts=\toks16
 \float@box=\box42
 \@float@everytoks=\toks17
 \@floatcapt=\box43
 )
-(c:/w32tex/share/texmf-dist/tex/platex/frame/framed.sty
+(c:/w32tex/share/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip44
 \fb@frw=\dimen126
@@ -103,7 +102,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameSep=\dimen129
 )
 (c:/w32tex/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2017/07/05 version 4.10 text color boxes
+Package: tcolorbox 2018/07/26 version 4.14 text color boxes
 
 (c:/w32tex/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (c:/w32tex/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -146,10 +145,10 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 \pgf@yc=\dimen139
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count93
-\c@pgf@countb=\count94
-\c@pgf@countc=\count95
-\c@pgf@countd=\count96
+\c@pgf@counta=\count94
+\c@pgf@countb=\count95
+\c@pgf@countc=\count96
+\c@pgf@countd=\count97
 \t@pgf@toka=\toks22
 \t@pgf@tokb=\toks23
 \t@pgf@tokc=\toks24
@@ -164,12 +163,12 @@ File: pgfsys-dvipdfmx.def 2014/07/09  (rcs-revision 1.14)
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )
-\pgfsys@objnum=\count97
+\pgfsys@objnum=\count98
 ))
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count98
-\pgfsyssoftpath@bigbuffer@items=\count99
+\pgfsyssoftpath@smallbuffer@items=\count99
+\pgfsyssoftpath@bigbuffer@items=\count100
 )
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -198,7 +197,7 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen140
-\pgfmath@count=\count100
+\pgfmath@count=\count101
 \pgfmath@box=\box45
 \pgfmath@toks=\toks25
 \pgfmath@stack@operand=\toks26
@@ -222,7 +221,7 @@ x)
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
 etics.code.tex)))
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count101
+\c@pgfmathroundto@lastzeros=\count102
 ))
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
@@ -258,7 +257,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box46
 \pgf@hbox=\box47
 \pgf@layerbox@main=\box48
-\pgf@picture@serial@count=\count102
+\pgf@picture@serial@count=\count103
 )
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
 .tex
@@ -289,7 +288,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen164
-\pgf@sys@shading@range@num=\count103
+\pgf@sys@shading@range@num=\count104
 )
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -339,16 +338,16 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \@envbody=\toks30
 )
 (c:/w32tex/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count104
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count105
 )
 \tcb@titlebox=\box51
 \tcb@upperbox=\box52
 \tcb@lowerbox=\box53
 \tcb@phantombox=\box54
-\c@tcbbreakpart=\count105
-\c@tcblayer=\count106
-\tcolorbox@number=\count107
+\c@tcbbreakpart=\count106
+\c@tcblayer=\count107
+\tcolorbox@number=\count108
 \tcb@temp=\box55
 \tcb@temp=\box56
 \tcb@temp=\box57
@@ -356,31 +355,27 @@ Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
 \tcb@out=\write4
 \tcb@record@out=\write5
 )
-(c:/w32tex/share/texmf-dist/tex/latex/quotchap/quotchap.sty
-Package: quotchap 2012/10/20 v1.1 Decorative Chapter Headings with Quotes
-\@quotebox=\box59
-)
 (c:/w32tex/share/texmf-dist/tex/latex/pdfpages/pdfpages.sty
-Package: pdfpages 2017/07/14 v0.5j Insert pages of external PDF documents (AM)
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
 
 (c:/w32tex/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (c:/w32tex/share/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count108
-\calc@Bcount=\count109
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count109
+\calc@Bcount=\count110
 \calc@Adimen=\dimen167
 \calc@Bdimen=\dimen168
 \calc@Askip=\skip45
 \calc@Bskip=\skip46
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count110
+\calc@Ccount=\count111
 \calc@Cskip=\skip47
 )
 (c:/w32tex/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
-Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 
 (c:/w32tex/share/texmf-dist/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
@@ -392,22 +387,22 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 (c:/w32tex/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )))
 \AM@pagewidth=\dimen169
 \AM@pageheight=\dimen170
 
 (c:/w32tex/share/texmf-dist/tex/latex/pdfpages/ppdvipdfmx.def
-File: ppdvipdfmx.def 2017/07/14 v0.5j Pdfpages driver for dvipdfmx (AM)
+File: ppdvipdfmx.def 2017/10/31 v0.5l Pdfpages driver for dvipdfmx (AM)
 )
-\AM@pagebox=\box60
+\AM@pagebox=\box59
 \AM@global@opts=\toks31
 \AM@toc@title=\toks32
-\c@AM@survey=\count111
-\AM@templatesizebox=\box61
+\c@AM@survey=\count112
+\AM@templatesizebox=\box60
 )
 (c:/w32tex/share/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+Package: hyperref 2018/09/30 v6.88a Hypertext links for LaTeX
 
 (c:/w32tex/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
@@ -425,13 +420,9 @@ Package ifvtex Info: VTeX not detected.
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
@@ -463,58 +454,59 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen171
-\Hy@linkcounter=\count112
-\Hy@pagecounter=\count113
+\Hy@linkcounter=\count113
+\Hy@pagecounter=\count114
 
 (c:/w32tex/share/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2018/09/30 v6.88a Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count114
+\Hy@SavedSpaceFactor=\count115
 
 (c:/w32tex/share/texmf-dist/tex/latex/config/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4498.
-Package hyperref Info: Link nesting OFF on input line 4503.
-Package hyperref Info: Hyper index ON on input line 4506.
-Package hyperref Info: Plain pages OFF on input line 4513.
-Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Hyper figures OFF on input line 4535.
+Package hyperref Info: Link nesting OFF on input line 4540.
+Package hyperref Info: Hyper index ON on input line 4543.
+Package hyperref Info: Plain pages OFF on input line 4550.
+Package hyperref Info: Backreferencing OFF on input line 4555.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4751.
-\c@Hy@tempcnt=\count115
+Package hyperref Info: Bookmarks ON on input line 4788.
+\c@Hy@tempcnt=\count116
 
 (c:/w32tex/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5104.
+LaTeX Info: Redefining \url on input line 5141.
 \XeTeXLinkMargin=\dimen172
-\Fld@menulength=\count116
+\Fld@menulength=\count117
 \Field@Width=\dimen173
 \Fld@charsize=\dimen174
-Package hyperref Info: Hyper figures OFF on input line 6358.
-Package hyperref Info: Link nesting OFF on input line 6363.
-Package hyperref Info: Hyper index ON on input line 6366.
-Package hyperref Info: backreferencing OFF on input line 6373.
-Package hyperref Info: Link coloring OFF on input line 6378.
-Package hyperref Info: Link coloring with OCG OFF on input line 6383.
-Package hyperref Info: PDF/A mode OFF on input line 6388.
-LaTeX Info: Redefining \ref on input line 6428.
-LaTeX Info: Redefining \pageref on input line 6432.
-\Hy@abspage=\count117
-\c@Item=\count118
-\c@Hfootnote=\count119
+Package hyperref Info: Hyper figures OFF on input line 6396.
+Package hyperref Info: Link nesting OFF on input line 6401.
+Package hyperref Info: Hyper index ON on input line 6404.
+Package hyperref Info: backreferencing OFF on input line 6411.
+Package hyperref Info: Link coloring OFF on input line 6416.
+Package hyperref Info: Link coloring with OCG OFF on input line 6421.
+Package hyperref Info: PDF/A mode OFF on input line 6426.
+LaTeX Info: Redefining \ref on input line 6466.
+LaTeX Info: Redefining \pageref on input line 6470.
+\Hy@abspage=\count118
+\c@Item=\count119
+\c@Hfootnote=\count120
 )
-
-Package hyperref Message: Driver: hdvipdfm.
+Package hyperref Info: Driver: hdvipdfm.
 
 (c:/w32tex/share/texmf-dist/tex/latex/hyperref/hdvipdfm.def
-File: hdvipdfm.def 2017/03/14 v6.85a Hyperref driver for dvipdfm
-\pdfm@box=\box62
-\c@Hy@AnnotLevel=\count120
-\HyField@AnnotCount=\count121
-\Fld@listcount=\count122
-\c@bookmark@seq@number=\count123
+File: hdvipdfm.def 2018/09/30 v6.88a Hyperref driver for dvipdfm
+\pdfm@box=\box61
+\c@Hy@AnnotLevel=\count121
+\HyField@AnnotCount=\count122
+\Fld@listcount=\count123
+\c@bookmark@seq@number=\count124
 
 (c:/w32tex/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
@@ -524,11 +516,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip48
 )
 (c:/w32tex/share/texmf-dist/tex/latex/pxjahyper/pxjahyper.sty
-Package: pxjahyper 2012/05/27 v0.2
+Package: pxjahyper 2018/07/15 v0.3d
 )
 (c:/w32tex/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box63
+\ttl@box=\box62
 \beforetitleunit=\skip49
 \aftertitleunit=\skip50
 \ttl@plus=\dimen175
@@ -563,7 +555,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
 de.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count124
+\pgf@plot@mark@count=\count125
 \pgfplotmarksize=\dimen182
 )
 \tikz@lastx=\dimen183
@@ -572,163 +564,55 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@lastysaved=\dimen186
 \tikzleveldistance=\dimen187
 \tikzsiblingdistance=\dimen188
-\tikz@figbox=\box64
-\tikz@figbox@bg=\box65
-\tikz@tempbox=\box66
-\tikz@tempbox@bg=\box67
-\tikztreelevel=\count125
-\tikznumberofchildren=\count126
-\tikznumberofcurrentchild=\count127
-\tikz@fig@count=\count128
+\tikz@figbox=\box63
+\tikz@figbox@bg=\box64
+\tikz@tempbox=\box65
+\tikz@tempbox@bg=\box66
+\tikztreelevel=\count126
+\tikznumberofchildren=\count127
+\tikznumberofcurrentchild=\count128
+\tikz@fig@count=\count129
 
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count129
-\pgfmatrixcurrentcolumn=\count130
-\pgf@matrix@numberofcolumns=\count131
+\pgfmatrixcurrentrow=\count130
+\pgfmatrixcurrentcolumn=\count131
+\pgf@matrix@numberofcolumns=\count132
 )
-\tikz@expandcount=\count132
+\tikz@expandcount=\count133
 
 (c:/w32tex/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
 (c:/w32tex/share/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
-Library (tcolorbox): 'tcbbreakable.code.tex' version '4.10'
-\tcb@testbox=\box68
-\tcb@totalupperbox=\box69
-\tcb@totallowerbox=\box70
+Library (tcolorbox): 'tcbbreakable.code.tex' version '4.14'
+\tcb@testbox=\box67
+\tcb@totalupperbox=\box68
+\tcb@totallowerbox=\box69
 ) (c:/w32tex/share/texmf-dist/tex/latex/titlesec/block.tss
 File: block.tss 2016/03/15
-) (./chap2.aux)
-\openout1 = `chap2.aux'.
+) (./chap2.aux
+! Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.31 \bibcite{Wo^^c5^^baniak}{1}
+                                
+? 
+! Emergency stop.
+<to be read again> 
+                   \unhbox 
+l.31 \bibcite{Wo^^c5^^baniak}{1}
+                                
+End of file on the terminal!
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-
-ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box71
-
-(c:/w32tex/share/texmf-dist/tex/latex/oberdiek/pdflscape.sty
-Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
-
-(c:/w32tex/share/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-))
-Package hyperref Info: Link coloring OFF on input line 43.
-
-(c:/w32tex/share/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
-
-(c:/w32tex/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
-)
-\c@section@level=\count133
-)
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
-
-(./chap2.out) (./chap2.out)
-\@outlinefile=\write6
-\openout6 = `chap2.out'.
-
-
-第1章
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 45.
-
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 19.9311pt on input line 45.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 19.9311pt on input line 45.
-LaTeX Font Info:    Try loading font information for T1+pbk on input line 45.
-(c:/w32tex/share/texmf-dist/tex/latex/psnfss/t1pbk.fd
-File: t1pbk.fd 2001/06/04 font definitions for T1/pbk.
-)
-LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <20.74> not available
-(Font)              Font shape `T1/pbk/db/n' tried instead on input line 45.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 96.09985pt on input line 45.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 96.09985pt on input line 45.
-LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <100> not available
-(Font)              Font shape `T1/pbk/db/n' tried instead on input line 45.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 46.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 46.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 46.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 46.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 51.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 51.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 51.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 51.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 51.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 51.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 51.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 51.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 51.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 67.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 67.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 67.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 67.
- [1
-
-
-]
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 80.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 80.
- [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
- (./chap2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 94.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
-Package rerunfilecheck Info: File `chap2.out' has not changed.
-(rerunfilecheck)             Checksum: 4D0B35F2140BFA8AE11C59814B8DDA73;324.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 18382 strings out of 493648
- 356508 string characters out of 6150704
- 423014 words of memory out of 5000000
- 21662 multiletter control sequences out of 15000+600000
- 15371 words of font info for 64 fonts, out of 8000000 for 9000
+ 18263 strings out of 493246
+ 352604 string characters out of 6146321
+ 426536 words of memory out of 5000000
+ 21955 multiletter control sequences out of 15000+600000
+ 8372 words of font info for 36 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 54i,10n,73p,831b,517s stack positions out of 5000i,500n,10000p,500000b,80000s
-
-Output written on chap2.dvi (2 pages, 9948 bytes).
+ 54i,0n,73p,829b,106s stack positions out of 5000i,500n,10000p,500000b,80000s
+No pages of output.
