@@ -1,7 +1,0 @@
-\BOOKMARK [0][-]{chapter.1}{脳のモデルとしてのニューラルネットワーク}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Spikingモデル}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{発火率モデル}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{スパイクモデルと発火率モデル}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.4}{STDP則によるSNNの学習}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.5}{これはsection}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter*.1}{参考文献}{}% 7

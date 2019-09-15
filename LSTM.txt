@@ -1,9 +1,0 @@
-Hogdkin-Huxley型モデル
-
-Fitzhugh-Nagumoモデル
-
-Izhikevich EM (2003) Simple Model of Spiking Neurons. IEEE Transactions on Neural Networks, 14:1569-1572.
-
-再帰的な相互的な興奮性結合によるセル・アセンブリ(cell assembly)が形成され、刺激がなくてもアセンブリの活動が持続する（つまりアトラクタが形成されている）
-
-https://www.cns.nyu.edu/~eorhan/notes/lif-neuron.pdf
