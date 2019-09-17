@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 from Models.Neurons import CurrentBasedLIF
-from Models.Synapses import DoubleExponentialSynapse, SingleExponentialSynapse
+from Models.Synapses import DoubleExponentialSynapse #, SingleExponentialSynapse
 
 np.random.seed(seed=0)
 
@@ -19,8 +19,8 @@ W = 0.2*np.random.randn(num_out, num_in) # ランダムな結合重み
 neurons = CurrentBasedLIF(N=num_out, dt=dt, tref=5e-3,
                           tc_m=1e-2, vrest=-65, vreset=-60,
                           vthr=-40, vpeak=30)
-synapses = SingleExponentialSynapse(N=num_out, dt=dt, td=1e-2)
-#synapses = DoubleExponentialSynapse(N=num_out, dt=dt, td=1e-2, tr=1e-2)
+synapses = DoubleExponentialSynapse(N=num_out, dt=dt, td=1e-2, tr=1e-2)
+#synapses = SingleExponentialSynapse(N=num_out, dt=dt, td=1e-2)
 
 # 記録用配列
 current = np.zeros((num_out, nt))
@@ -54,7 +54,8 @@ plt.tight_layout()
 
 plt.subplot(3,1,3)
 for i in range(num_in):    
-    plt.plot(t, x[:, i]*(i+1), 'ko', markersize=2)
+    plt.plot(t, x[:, i]*(i+1), 'ko', markersize=2,
+             rasterized=True)
 plt.xlabel('Time (s)')
 plt.ylabel('Neuron index') 
 plt.xlim(0, T)

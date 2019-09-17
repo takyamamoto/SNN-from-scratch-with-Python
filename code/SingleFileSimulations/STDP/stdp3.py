@@ -52,7 +52,7 @@ delta_w[:nt] = W[0, :]; delta_w[nt:] = W[1, 1:]
 # 描画
 time = np.arange(-T, T-dt, dt)*1e3
 plt.figure(figsize=(5, 4))
-plt.plot(time, delta_w[::-1])
+plt.plot(time, delta_w[::-1], color="k")
 plt.hlines(0, -50, 50)
 plt.xlabel("$\Delta t$ (ms)")
 plt.ylabel("$\Delta w$")

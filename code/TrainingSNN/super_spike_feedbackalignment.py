@@ -101,7 +101,7 @@ connect_1 = FullConnection(N_in, N_mid,
                            initW=0.1*np.random.rand(N_mid, N_in))
 connect_2 = FullConnection(N_mid, N_out, 
                            initW=0.1*np.random.rand(N_out, N_mid))
-#B = np.random.rand(N_mid, N_out)
+B = np.random.rand(N_mid, N_out)
 
 r0 = 1e-3
 gamma = 0.7
@@ -153,7 +153,7 @@ for i in tqdm(range(num_iter)):
         # Backward(誤差の伝搬)
         e2 = np.expand_dims(es(s2, y[t]), axis=1) / N_out
         e1 = connect_2.backward(e2) / N_mid
-        #e1 = B @ e2 / N_mid
+        e1 = B @ e2 / N_mid
 
         # コストの計算
         cost += np.sum(e2**2)
@@ -260,5 +260,5 @@ plt.xlabel('Iter')
 plt.ylabel('Cost') 
 hide_ticks()
 plt.tight_layout()
-plt.savefig("super_spike_cost.svg")
+plt.savefig("super_spike_cost_fa.pdf")
 plt.show()

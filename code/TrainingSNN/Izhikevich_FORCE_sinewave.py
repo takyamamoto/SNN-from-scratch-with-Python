@@ -25,12 +25,8 @@ vrest = -60  # 静止膜電位 (mV)
 vreset = -65 # リセット電位 (mV) 
 vthr = -20   # 閾値電位 (mV)
 vpeak = 30   #　ピーク電位 (mV)
-
-
 td = 20; tr = 2 # シナプスの時定数
-
-Pinv = np.eye(N)*2 # 相関行列の逆行列の初期化
-p = 0.1 # ネットワークのスパース性
+P = np.eye(N)*2 # 相関行列の逆行列の初期化
 
 # 教師信号(正弦波)の生成
 T = 15000 # シミュレーション時間 (s)
@@ -52,6 +48,7 @@ synapses_out = DoubleExponentialSynapse(N, dt=dt, td=td, tr=tr)
 synapses_rec = DoubleExponentialSynapse(N, dt=dt, td=td, tr=tr)
 
 # 再帰重みの初期値
+p = 0.1 # ネットワークのスパース性
 OMEGA = G*(np.random.randn(N,N))*(np.random.rand(N,N)<p)/(math.sqrt(N)*p)
 
 for i in range(N):
@@ -59,14 +56,13 @@ for i in range(N):
     OMEGA[i,QS] = OMEGA[i,QS] - np.sum(OMEGA[i,QS], axis=0)/len(QS)
 
 
-E = (2*np.random.rand(N) - 1)*Q
-
 # 変数の初期値
 k = 1 # 出力ニューロンの数
+E = (2*np.random.rand(N,k) - 1)*Q
 PSC = np.zeros(N) # シナプス後電流
 JD = np.zeros(N) # 再帰入力の重み和
 z = np.zeros(k) # 出力の初期化
-BPhi = np.zeros(N) #　学習される重みの初期値
+Phi = np.zeros(N) #　学習される重みの初期値
 
 # 記録用変数 
 REC_v = np.zeros((nt,10)) # 膜電位の記録変数
@@ -80,7 +76,7 @@ BIAS = 1000 # 入力電流のバイアス
 ## シミュレーション ###
 #################
 for t in tqdm(range(nt)):
-    I = PSC + E*z + BIAS # シナプス電流 
+    I = PSC + np.dot(E, z) + BIAS # シナプス電流 
     s = neurons(I) # 中間ニューロンのスパイク
     
     index = np.where(s)[0] # 発火したニューロンのindex
@@ -97,16 +93,16 @@ for t in tqdm(range(nt)):
     r = synapses_out(s) # 出力電流(神経伝達物質の放出量)  
     r = np.expand_dims(r,1) # (N,) -> (N, 1)
     
-    z = BPhi.T @ r # デコードされた出力
+    z = Phi.T @ r # デコードされた出力
     err = z - zx[t] # 誤差
 
     # FORCE法(RLS)による重み更新
     if t % step == 1:
         if t > tmin:
             if t < tcrit:
-                cd = (Pinv @ r)
-                BPhi = BPhi - (cd @ err.T)
-                Pinv = Pinv - (cd @ cd.T) / (1.0 + r.T @ cd)
+                cd = (P @ r)
+                Phi = Phi - (cd @ err.T)
+                P = P - (cd @ cd.T) / (1.0 + r.T @ cd)
     
     current[t] = z
     REC_v[t] = neurons.v_[:10]
@@ -116,7 +112,7 @@ for t in tqdm(range(nt)):
 #################
 TotNumSpikes = ns 
 M = tspike[tspike[:,1]>dt*tcrit,:]
-AverageRate = len(M)/(N*(T-dt*tcrit))
+AverageRate = len(M)/(N*(T-dt*tcrit))*1e3
 print("\n")
 print("Total number of spikes : ", TotNumSpikes)
 print("Average firing rate(Hz): ", AverageRate)
@@ -184,7 +180,7 @@ plt.savefig("Iz_FORCE_decoded.pdf")
 plt.show()
 
 """
-Z = np.linalg.eig(OMEGA + np.expand_dims(E,1) @ np.expand_dims(BPhi,1).T)
+Z = np.linalg.eig(OMEGA + np.expand_dims(E,1) @ np.expand_dims(Phi,1).T)
 Z2 = np.linalg.eig(OMEGA)
 plt.figure(figsize=(6, 5))
 plt.title('Weight eigenvalues')

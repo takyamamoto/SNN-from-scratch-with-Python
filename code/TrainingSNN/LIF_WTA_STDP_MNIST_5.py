@@ -71,7 +71,7 @@ def assign_labels(spikes, labels, n_labels, rates=None, alpha=1.0):
     
         if n_labeled > 0:
             # label == iのサンプルのインデックスを取得
-            indices = np.nonzero(labels == i)[0]
+            indices = np.where(labels == i)[0]
             
             # label == iに対する各ニューロンごとの平均発火率を計算(前回の発火率との移動平均)
             rates[:, i] = alpha*rates[:, i] + (np.sum(n_spikes[indices], axis=0)/n_labeled)
@@ -110,7 +110,7 @@ def prediction(spikes, assignments, n_labels):
     
         if n_assigns > 0:
             # 各ラベルのニューロンのインデックスを取得
-            indices = np.nonzero(assignments == i)[0]
+            indices = np.where(assignments == i)[0]
     
             # 各ラベルのニューロンのレイヤー全体における平均発火数を求める
             rates[:, i] = np.sum(n_spikes[:, indices], axis=1) / n_assigns
@@ -261,13 +261,15 @@ n_labels = 10
 n_iteration = 10
 
 N_train = 100
-update_nt = 20
+update_nt = 50
 input_spikes, labels = load_and_encoding_dataset(N_train, dt, nt_inj, max_fr=5)
+
+
 network = DiehlAndCook2015Network(N_in=784, N_neurons=n_neurons,
                                   wexc=22.5, winh=17.5,
                                   dt=dt, wmin=0.0, wmax=1.0,
                                   lr=(1e-2, 1e-4),
-                                  update_nt=100)
+                                  update_nt=update_nt)
 spikes = np.zeros((N_train, nt_inj, n_neurons)) #.astype(np.int8)
 blank_input = np.zeros(784)
 
@@ -286,7 +288,8 @@ for train_iter in range(n_iteration):
     else:
         assignments, proportions, rates = assign_labels(spikes, labels,
                                                         n_labels, rates)
-    print("spikes:", np.sum(spikes))
+    print(assignments)
+    print("Ave. spikes:", np.sum(spikes)/N_train)
     #print(network.input_conn.W)
     predicted_labels = prediction(spikes, assignments, n_labels)
     accuracy = np.mean(np.where(labels==predicted_labels, 1, 0)).astype(np.float32)

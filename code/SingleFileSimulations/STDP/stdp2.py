@@ -43,6 +43,7 @@ for t in range(nt):
     w_arr[t] = w
 
 # 描画
+time = np.arange(nt)*dt*1e3
 plt.figure(figsize=(6, 6))
 def hide_ticks(): #上と右の軸を表示しないための関数
     plt.gca().spines['right'].set_visible(False)
@@ -51,19 +52,19 @@ def hide_ticks(): #上と右の軸を表示しないための関数
     plt.gca().xaxis.set_ticks_position('bottom')
 
 plt.subplot(5,1,1)
-plt.plot(x_pre_arr)
+plt.plot(time, x_pre_arr, color="k")
 plt.ylabel("$x_{pre}$"); hide_ticks(); plt.xticks([])
 plt.subplot(5,1,2)
-plt.plot(spike_pre)
+plt.plot(time, spike_pre, color="k")
 plt.ylabel("pre- spikes"); hide_ticks(); plt.xticks([])
 plt.subplot(5,1,3)
-plt.plot(spike_post)
+plt.plot(time, spike_post, color="k")
 plt.ylabel("post- spikes"); hide_ticks(); plt.xticks([])
 plt.subplot(5,1,4)
-plt.plot(x_post_arr)
+plt.plot(time, x_post_arr, color="k")
 plt.ylabel("$x_{post}$"); hide_ticks(); plt.xticks([])
 plt.subplot(5,1,5)
-plt.plot(w_arr)
+plt.plot(time, w_arr, color="k")
 plt.xlabel("$t$ (ms)"); plt.ylabel("$w$"); hide_ticks()
 plt.tight_layout()
 plt.savefig("online_stdp.pdf")
