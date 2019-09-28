@@ -113,14 +113,14 @@ class ConductanceBasedLIF:
         
         return s    
 
-
 class DiehlAndCook2015LIF:
     def __init__(self, N, dt=1e-3, tref=5e-3, tc_m=1e-1,
                  vrest=-65, vreset=-65, init_vthr=-52, vpeak=20,
-                 theta_plus=0.05, tc_theta=1e4, e_exc=0, e_inh=-100):
+                 theta_plus=0.05, theta_max=35, tc_theta=1e4, e_exc=0, e_inh=-100):
         """
-        Leaky integrate-and-fire model.
-        
+        Leaky integrate-and-fire model of Diehl and Cooks (2015) 
+        https://www.frontiersin.org/articles/10.3389/fncom.2015.00099/full
+
         Args:
             N (int)       : Number of neurons.
             dt (float)    : Simulation time step in seconds.
@@ -142,6 +142,7 @@ class DiehlAndCook2015LIF:
         self.init_vthr = init_vthr
         self.theta = np.zeros(N)
         self.theta_plus = theta_plus
+        self.theta_max = theta_max
         self.tc_theta = tc_theta
         self.vpeak = vpeak
 
@@ -171,69 +172,8 @@ class DiehlAndCook2015LIF:
         v = self.v + ((self.dt*self.tcount) > (self.tlast + self.tref))*dv*self.dt
         
         s = 1*(v>=self.vthr) #発火時は1, その他は0の出力
-        self.theta = (1-self.dt/self.tc_theta)*self.theta + self.theta_plus*s
-        self.vthr = self.theta + self.init_vthr
-        self.tlast = self.tlast*(1-s) + self.dt*self.tcount*s #最後の発火時の更新
-        v = v*(1-s) + self.vpeak*s #閾値を超えると膜電位をvpeakにする
-        self.v_ = v #発火時の電位も含めて記録するための変数
-        self.v = v*(1-s) + self.vreset*s  #発火時に膜電位をリセット
-        self.tcount += 1
-        
-        return s 
-    
-class CurrentDiehlAndCook2015LIF:
-    def __init__(self, N, dt=1e-3, tref=5e-3, tc_m=1e-1,
-                 vrest=-65, vreset=-65, init_vthr=-52, vpeak=20,
-                 theta_plus=0.05, tc_theta=1e4):
-        """
-        Leaky integrate-and-fire model.
-        
-        Args:
-            N (int)       : Number of neurons.
-            dt (float)    : Simulation time step in seconds.
-            tc_m (float)  : Membrane time constant in seconds. 
-            tref (float)  : Refractory time constant in seconds.
-            vreset (float): Reset membrane potential (mV).
-            vrest (float) : Resting membrane potential (mV).
-            vthr (float)  : Threshold membrane potential (mV).
-            vpeak (float) : Peak membrane potential (mV).
-            e_exc (float) : equilibrium potential of excitatory synapses (mV).
-            e_inh (float) : equilibrium potential of inhibitory synapses (mV).
-        """
-        self.N = N
-        self.dt = dt
-        self.tref = tref
-        self.tc_m = tc_m 
-        self.vreset = vreset
-        self.vrest = vrest
-        self.init_vthr = init_vthr
-        self.theta = np.zeros(N)
-        self.theta_plus = theta_plus
-        self.tc_theta = tc_theta
-        self.vpeak = vpeak
-
-        self.v = self.vreset*np.ones(N)
-        self.vthr = self.init_vthr
-        self.v_ = None
-        self.tlast = 0
-        self.tcount = 0
-    
-    def initialize_states(self, random_state=False):
-        if random_state:
-            self.v = self.vreset + np.random.rand(self.N)*(self.vthr-self.vreset) 
-        else:
-            self.v = self.vreset*np.ones(self.N)
-        self.vthr = self.init_vthr
-        self.theta = np.zeros(self.N)
-        self.tlast = 0
-        self.tcount = 0
-        
-    def __call__(self, I):
-        dv = (self.vrest - self.v + I) / self.tc_m #Voltage equation with refractory period 
-        v = self.v + ((self.dt*self.tcount) > (self.tlast + self.tref))*dv*self.dt
-        
-        s = 1*(v>=self.vthr) #発火時は1, その他は0の出力
-        self.theta = (1-self.dt/self.tc_theta)*self.theta + self.theta_plus*s
+        theta = (1-self.dt/self.tc_theta)*self.theta + self.theta_plus*s
+        self.theta = np.clip(theta, 0, self.theta_max)
         self.vthr = self.theta + self.init_vthr
         self.tlast = self.tlast*(1-s) + self.dt*self.tcount*s #最後の発火時の更新
         v = v*(1-s) + self.vpeak*s #閾値を超えると膜電位をvpeakにする
