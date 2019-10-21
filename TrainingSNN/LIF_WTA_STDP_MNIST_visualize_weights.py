@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
-epoch = 19
+epoch = 29
 n_neurons = 100
 
 results_save_dir = "./LIF_WTA_STDP_MNIST_results/" # 結果が保存されているディレクトリ

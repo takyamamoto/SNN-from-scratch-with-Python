@@ -18,7 +18,7 @@ np.random.seed(seed=0)
 #################
 # 画像をポアソンスパイク列に変換
 def online_load_and_encoding_dataset(dataset, i, dt, n_time, max_fr=32,
-                                     norm=180):
+                                     norm=140):
     fr_tmp = max_fr*norm/np.sum(dataset[i][0])
     fr = fr_tmp*np.repeat(np.expand_dims(dataset[i][0],
                                          axis=0), n_time, axis=0)
@@ -159,7 +159,7 @@ class DiehlAndCook2015Network:
         self.input_conn = FullConnection(n_in, n_neurons,
                                          initW=initW)
         self.exc2inh_W = wexc*np.eye(n_neurons)
-        self.inh2exc_W = (winh/n_neurons)*(np.ones((n_neurons, n_neurons)) - np.eye(n_neurons))
+        self.inh2exc_W = (winh/(n_neurons-1))*(np.ones((n_neurons, n_neurons)) - np.eye(n_neurons))
         
         self.delay_input = DelayConnection(N=n_neurons, delay=5e-3, dt=dt)
         self.delay_exc2inh = DelayConnection(N=n_neurons, delay=2e-3, dt=dt)
@@ -230,7 +230,7 @@ class DiehlAndCook2015Network:
                 # STDP則
                 dW = self.lr_p*(self.wmax - W)*np.dot(self.s_exc_, self.x_in_)
                 dW -= self.lr_m*W*np.dot(self.x_exc_, self.s_in_)
-                clipped_dW = np.clip(dW / self.update_nt, -5e-2, 5e-2)
+                clipped_dW = np.clip(dW / self.update_nt, -1e-3, 1e-3)
                 self.input_conn.W = np.clip(W + clipped_dW,
                                             self.wmin, self.wmax)
                 self.reset_trace() # スパイク列とスパイクトレースをリセット
@@ -257,8 +257,8 @@ if __name__ == '__main__':
     
     # ネットワークの定義
     network = DiehlAndCook2015Network(n_in=784, n_neurons=n_neurons,
-                                      wexc=2.25, winh=0.875,
-                                      dt=dt, wmin=0.0, wmax=0.1,
+                                      wexc=2.25, winh=0.85,
+                                      dt=dt, wmin=0.0, wmax=5e-2,
                                       lr=(1e-2, 1e-4),
                                       update_nt=update_nt)
     
@@ -268,7 +268,7 @@ if __name__ == '__main__':
     blank_input = np.zeros(784) # ブランク入力
     init_max_fr = 32 # 初期のポアソンスパイクの最大発火率
     
-    results_save_dir = "./LIF_WTA_STDP_MNIST_results2/" # 結果を保存するディレクトリ
+    results_save_dir = "./LIF_WTA_STDP_MNIST_results/" # 結果を保存するディレクトリ
     os.makedirs(results_save_dir, exist_ok=True) # ディレクトリが無ければ作成
     
     #################
@@ -324,8 +324,8 @@ if __name__ == '__main__':
         accuracy_all[epoch] = accuracy
         
         # 学習率の減衰
-        network.lr_p *= 0.85
-        network.lr_m *= 0.85
+        network.lr_p *= 0.75
+        network.lr_m *= 0.75
         
         # 重みの保存(エポック毎)
         np.save(results_save_dir+"weight_epoch"+str(epoch)+".npy",
@@ -339,9 +339,10 @@ if __name__ == '__main__':
              color="k")
     plt.xlabel("Epoch")
     plt.ylabel("Train accuracy (%)")
-    plt.savefig(results_save_dir+"accuracy.png")
+    plt.savefig(results_save_dir+"accuracy.svg")
     #plt.show()
     
+    # パラメータの保存
     np.save(results_save_dir+"assignments.npy", assignments)
     np.save(results_save_dir+"weight.npy", network.input_conn.W)
     np.save(results_save_dir+"exc_neurons_theta.npy",

@@ -30,13 +30,9 @@ labels = np.array([test[i][1] for i in range(n_train)]) # ラベルの配列
 results_save_dir = "./LIF_WTA_STDP_MNIST_results/" # 結果が保存されているディレクトリ
 
 network = DiehlAndCook2015Network(n_in=784, n_neurons=n_neurons,
-                                  wexc=2.25, winh=0.875,
-                                  dt=dt, wmin=0.0, wmax=0.1,
-                                  lr=(1e-2, 1e-4),
-                                  update_nt=update_nt)
-
+                                  wexc=2.25, winh=0.85, dt=dt)
 network.initialize_states() # ネットワークの初期化
-network.input_conn.W = np.load(results_save_dir+"weight_epoch.npy")
+network.input_conn.W = np.load(results_save_dir+"weight.npy")
 network.exc_neurons.theta = np.load(results_save_dir+"exc_neurons_theta.npy")
 network.exc_neurons.theta_plus = 0
 

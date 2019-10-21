@@ -13,7 +13,7 @@ fr = 30 # ガンマスパイクの発火率(Hz)
 k = 12 # k=1のときはポアソン過程に一致
 theta = 1/(k*(fr*dt)) # fr = 1/(k*theta)
 isi = np.random.gamma(shape=k, scale=theta,
-                      size=(round(nt*1.5/fr), n_neurons))
+                      size=(int(nt*1.5/fr), n_neurons))
 spike_time = np.cumsum(isi, axis=0) # ISIを累積
 spike_time[spike_time > nt - 1] = -1 # ntを超える場合を0に
 spike_time = spike_time.astype(np.int32) # float to int
