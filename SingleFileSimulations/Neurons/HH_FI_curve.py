@@ -87,11 +87,11 @@ class HodgkinHuxleyModel:
 ##########
 ## Main ##
 ##########
-dt = 0.01; T = 100 # (ms)
+dt = 0.01; T = 500 # (ms)
 nt = round(T/dt) # ステップ数
 
 N = 50
-I_inj = np.linspace(0, 30, N) # 刺激電流 (uA/cm^2)
+I_inj = 30*np.random.rand(N) # 刺激電流 (uA/cm^2)
 firing_rate = np.zeros(N)
 
 for j in tqdm(range(N)):
@@ -109,7 +109,8 @@ for j in tqdm(range(N)):
     firing_rate[j] = rate
 
 plt.figure(figsize=(5, 4))
-plt.plot(I_inj, firing_rate)
+plt.scatter(I_inj, firing_rate)
+#plt.plot(I_inj, firing_rate)
 plt.xlabel('Input current (uA)')
 plt.ylabel('Firing rate (Hz)') 
 plt.tight_layout()
